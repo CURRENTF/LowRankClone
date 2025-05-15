@@ -1,0 +1,51 @@
+### model
+model_name_or_path: ../xxxx/models/converted_models/llama2-7b-2.7b-10bt
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: examples/deepspeed/ds_z2_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+
+### dataset
+dataset: ultrachat_200k
+#subset: train
+template: qwen
+cutoff_len: 2048
+#max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 8
+dataloader_num_workers: 1
+
+### output
+output_dir: saves/lrc-4b/lf/sft
+logging_steps: 10
+save_steps: 2000
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+report_to: none  # choices: [none, wandb, tensorboard, swanlab, mlflow]
+
+### train
+per_device_train_batch_size: 3
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: linear
+warmup_ratio: 0.1
+bf16: true
+pure_bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+disable_gradient_checkpointing: false
+include_effective_tokens_per_second: true
+#use_unsloth_gc: true
+#enable_liger_kernel: True
+
+### eval
+# eval_dataset: alpaca_en_demo
+# val_size: 0.1
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500

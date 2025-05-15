@@ -1,0 +1,35 @@
+### examples/train_lora/llama3_lora_sft.yaml
+model_name_or_path: /root/autodl-tmp/converted_models/temp
+
+stage: sft
+do_train: true
+finetuning_type: full
+# lora_target: null
+
+dataset: ultrachat_200k
+template: llama3
+cutoff_len: 2048
+max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+output_dir: /root/autodl-tmp/llama_factory_ckpts
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 16
+learning_rate: 2.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+pure_bf16: false
+ddp_timeout: 180000000
+
+val_size: 0.01
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 500
