@@ -24,7 +24,7 @@
 ## 1. Environment Setup
 
 > **Important:**  
-> LRC training requires `transformers` version **≤ 4.41.2**. Please ensure you install the correct versions as detailed below.
+> LRC training requires `transformers` version **== 4.41.2**. Please ensure you install the correct versions as detailed below.
 
 ### 🟢 LRC Training Environment
 
