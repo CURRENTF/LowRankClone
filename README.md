@@ -2,6 +2,8 @@
 
 **Code for the paper** *A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone*.
 
+🚀 **Paper Link**: https://arxiv.org/abs/2505.12781.
+
 🚀 **Model checkpoints are available on Hugging Face!**  
 👉 [Check them out here](https://huggingface.co/collections/JitaiHao/low-rank-clone-lrc-6828389e96a93f1d4219dfaf) 🔗
 
@@ -24,7 +26,7 @@
 ## 1. Environment Setup
 
 > **Important:**  
-> LRC training requires `transformers` version **== 4.41.2**. Please ensure you install the correct versions as detailed below.
+> LRC training requires `transformers` version **== 4.41.2** for **training**. Please ensure you install the correct versions as detailed below.
 
 ### 🟢 LRC Training Environment
 
@@ -226,3 +228,18 @@ lm_eval \
 
 ---
 
+## 📖 Citation
+
+If you use our work, please cite our paper:
+
+```bibtex
+@misc{hao2025tokenworth1000tokens,
+  title={A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone},
+  author={Jitai Hao and Qiang Huang and Hao Liu and Xinyan Xiao and Zhaochun Ren and Jun Yu},
+  year={2025},
+  eprint={2505.12781},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2505.12781}
+}
+```
