@@ -222,7 +222,7 @@ python data/generate_general_data_parallel.py \
 
 ---
 
-## 4. Evaluation
+## 4. Evaluation and vLLM Inference
 
 **❗ Critical:** Run evaluation **ONLY within the `lm_eval` environment** to ensure correct `transformers` and `lm_eval` versions are used.
 
@@ -236,6 +236,15 @@ lm_eval \
   --trust_remote_code \
   --num_fewshot 0 \
   --model_args pretrained=/path/to/your/CONVERTED_MODEL
+```
+
+**❗ Critical:** For vLLM serving, please specify `model-impl==transformers` when using qwen series model. This is because, in the current implementation of vLLM, the qwen model does not support setting a custom `head_dim` through the config. Fortunately, vLLM allows using transformers as the backend.
+
+Tested versions that can serve properly: `vllm==0.8.5.post1` and `transformers==4.51.3`.
+
+Serve command:
+```commandline
+vllm serve JitaiHao/LRC-1.7B-Base --model-impl transformers
 ```
 
 #### Evaluation Arguments:
@@ -253,7 +262,7 @@ lm_eval \
 
 ## 5. Contact & Acknowledgments
 
-For any questions or issues, please open an issue on GitHub or contact us at [your_email@example.com] (if you wish to provide one).
+For any questions or issues, please open an issue on GitHub or contact us at [jitaihao@outlook.com]
 
 We acknowledge and thank all the open-source projects and communities that made this work possible.
 
