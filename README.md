@@ -4,6 +4,7 @@
 *A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone*.
 
 🚀 **Paper Link**: [https://arxiv.org/abs/2505.12781](https://arxiv.org/abs/2505.12781)
+
 🚀 **Model checkpoints are available on Hugging Face!**
 👉 [Check them out here](https://huggingface.co/collections/JitaiHao/low-rank-clone-lrc-6828389e96a93f1d4219dfaf) 🔗
 
@@ -37,15 +38,11 @@ conda activate lrc
 pip install torch==2.3.0
 
 # Install core libraries with strict versioning for training
-pip install transformers[torch]==4.41.2 \
-            deepspeed==0.15.4 \
-            accelerate==1.1.1 \
-            datasets==2.19.2 \
-            datatrove \
-            fire \
-            matplotlib \
-            seaborn \
-            wandb
+pip install transformers[torch]==4.41.2 
+pip install deepspeed==0.15.4 
+pip install accelerate==1.1.1 
+pip install datasets==2.19.2 
+pip install datatrove==0.3.0 fire matplotlib seaborn wandb
 
 # Install Flash Attention for optimized performance
 MAX_JOBS=8 pip install flash-attn --no-build-isolation
