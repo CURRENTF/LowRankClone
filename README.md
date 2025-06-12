@@ -8,6 +8,8 @@
 🚀 **Model checkpoints are available on Hugging Face!**
 👉 [Check them out here](https://huggingface.co/collections/JitaiHao/low-rank-clone-lrc-6828389e96a93f1d4219dfaf) 🔗
 
+
+![overview](pics/overview.png)
 ---
 
 ## 📚 Table of Contents
@@ -109,6 +111,10 @@ accelerate launch --main_process_port 12231 --config_file "configs/accel_ds_8h80
   --use_all_attn 1 \
   --aux_loss_scale_factor 0.2
 ```
+
+We present the training curves of LRC-4B-Base and LRC-1.5B-Base in the figure below. Although a high grad norm was produced during training, it did not affect the normal training of the model.
+
+![image](pics/wandb_log.png)
 
 #### 🔍 Key Arguments Explained
 
