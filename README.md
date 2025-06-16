@@ -85,6 +85,8 @@ cd /path/to/your/LlamaFactory
 
 ### 🏋️ Training LRC-1.5B
 
+**❗ Critical:** `transformers==4.41.2` does not support `rope_scaling==llama3`. Please set `"rope_scaling": null` directly in the model's `config.json`.
+
 Train the LRC-1.5B model using the following `accelerate` command:
 
 ```bash
