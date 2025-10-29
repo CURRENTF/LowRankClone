@@ -1,4 +1,4 @@
-# 🌟 Low-Rank Clone (LRC)
+# 🌟[NeurIPS 2025 Spotlight] Low-Rank Clone (LRC)
 
 **Official Codebase for the paper:**
 *A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone*.
